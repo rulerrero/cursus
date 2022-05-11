@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 09:23:58 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/27 14:20:12 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:02:03 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*(dst + cont) = '\0';
 	return (len_dst + len_src);
 }
+
+/*Esta función concatena 2 strings hasta un límite de caracteres, coge el src y
+ * lo copia a partir del final del dest, pero la longitud empieza al principio
+ * del dest, es decir, va a contar los caracteres de dest, va a copiar los que 
+ * falten para llegar al size - 1 y ese último caracter será el final de línea
+ * */

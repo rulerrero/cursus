@@ -5,36 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 13:32:48 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/29 13:32:48 by rherrero         ###   ########.fr       */
+/*   Created: 2022/05/04 11:27:40 by rherrero          #+#    #+#             */
+/*   Updated: 2022/05/10 13:21:48 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
-	char	*str;
+	size_t	slen;
+	char	*result;
 
-	str = (char*)malloc(sizeof(*s) * (len +1)); 
-	if(!str)
-		return(NULL);
-
-		i = 0;
-		j = 0;
-
-		while (s[i])
-		{
-			if (i >= start && j < len)
-			{
-				str[j] = s[i];
-				j++;
-			}
-			i++;
-		}
-		str[j] = 0;
-		return (str);
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start > slen)
+		return (ft_calloc(1, 1));
+	if (len > slen)
+		len = slen - start;
+	result = (char *)ft_calloc(sizeof(*s), (len + 1));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (s[start] && (i < len) && (start < slen))
+	{
+		result[i] = s[start];
+		start++;
+		i++;
+	}
+	return (result);
 }

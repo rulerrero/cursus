@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 11:11:52 by rherrero          #+#    #+#             */
-/*   Updated: 2022/05/10 11:14:07 by rherrero         ###   ########.fr       */
+/*   Created: 2022/05/10 11:23:33 by rherrero          #+#    #+#             */
+/*   Updated: 2022/05/10 13:50:16 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned const char	*src_cpy;
-	unsigned char		*dst_cpy;
-	size_t				i;
+	int		i;
+	int		j;
+	char	*result;
 
-	src_cpy = (unsigned char *)src;
-	dst_cpy = (unsigned char *)dst;
 	i = 0;
-	if (!(src_cpy || dst_cpy))
+	j = 0;
+	if (!s1)
+		return (0);
+	result = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!result)
+		return (0);
+	while (s1[j])
 	{
-		return (NULL);
+		result[j] = s1[j];
+		j++;
 	}
-	while (i < n)
+	while (s2[i])
 	{
-		dst_cpy[i] = src_cpy[i];
+		result[j] = s2[i];
 		i++;
+		j++;
 	}
-	return (dst_cpy);
+	result[j] = '\0';
+	return (result);
 }
 
-/*Esta función sustituye size caracteres el valor en memoria de src a dest, si 
- * src y dest se solapan el resultado será indefinido*/
+/* coge s1 y s2, las concatena en una string y devuelve la nueva string */

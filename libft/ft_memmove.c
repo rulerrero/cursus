@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:41:10 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/27 11:47:40 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:19:52 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			*lastd-- = *lasts--;
 	return (dst);
 }
+
+/*Esta función copia de forma no destructiva, si el recurso y el destino se
+ * solapan lo hará de forma que se pueda completar la copia*/
+/*si el src es menor que el destino empezamos a copiar desde detrás hacia 
+ * adelante (primera condición)*/
+/* si no simplemente copiamos de izquierda a derecha*/

@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:49:34 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/27 12:46:44 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:21:46 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,6 @@ char	*ft_strdup(const char *s1)
 	s1_copy[i] = '\0';
 	return (s1_copy);
 }
+
+/*Esta función aloja suficiente memoria para copiar s1, hace la copia y devuelve
+ * un puntero al string, si no hay suficiente memoria devuelve 0*/

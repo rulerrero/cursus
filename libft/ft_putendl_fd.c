@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 13:20:55 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/29 13:20:55 by rherrero         ###   ########.fr       */
+/*   Created: 2022/05/04 11:04:48 by rherrero          #+#    #+#             */
+/*   Updated: 2022/05/10 11:21:04 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	const char nl = '\n';
-
-	write(fd, s, ft_strlen(s));
-	write(fd, &nl, 1);
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
+
+/*Esta función añade un salto de línea después de enviar el string*/

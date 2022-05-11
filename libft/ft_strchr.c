@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:46:43 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/27 12:40:47 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:21:33 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
+
+/*Esta función busca la primera aparición de un caracter en un string, si el
+ * caracter a buscar es '\0' también lo encontrará, devolverá un puntero al 
+ * caracter si lo encuentra o 0 si no lo encuentra*/

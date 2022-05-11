@@ -6,25 +6,32 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:23:07 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/29 13:02:17 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:02:48 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	l2;
+	unsigned int	len_ndl;
+	unsigned int	i;
 
-	l2 = ft_strlen(s2);
-	if (!l2)
-		return ((char *)s1);
-	while (len >= l2)
+	len_ndl = ft_strlen(needle);
+	if (len_ndl == 0)
+		return ((char *) haystack);
+	if (len == 0)
+		return (0);
+	i = 0;
+	while (haystack[i] && i <= (len - len_ndl))
 	{
-		len--;
-		if (!ft_memcmp(s1, s2, l2))
-			return ((char *)s1);
-		s1++;
+		if (!ft_strncmp(&haystack[i], needle, len_ndl))
+			return ((char *) &haystack[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
+
+/* busca un string corto (needle) en otro más grande (haystack), si
+ * encuentra la coincidencia devuelve el puntero al principio de la coincidencia
+ * */

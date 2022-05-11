@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:36:02 by rherrero          #+#    #+#             */
-/*   Updated: 2022/04/28 09:26:04 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:25:44 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
+
+/*Esta función busca la última aparición de un caracter en un string, si el
+ * caracter a buscar es '\0' también lo encontrará, devolverá un puntero al 
+ * caracter si lo encuentra o 0 si no lo encuentra*/
