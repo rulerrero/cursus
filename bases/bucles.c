@@ -12,8 +12,12 @@
     }
     printf("salimos del blucle.\n");
 }*/
+/*===========================================*/
 
-void    prueba_while(char* x)
+
+/* DO WHILE */
+
+/*void    prueba_while()
 {
     int x = 10;
         printf("a\n");
@@ -24,7 +28,7 @@ void    prueba_while(char* x)
     printf("c\n");
 }
 
-void    prueba_do(char* x)
+void    prueba_do()
 {
     int x = 10;
         printf("a\n");
@@ -41,8 +45,19 @@ void    prueba_do(char* x)
 int main()
 {
     printf("WHILE\n");
-    printf("%s\n", prueba_while(x));
+    printf("%s\n", prueba_while);     // NO SE HACERLO      T_T
     printf("DO WHILE\n");
-    printf("%s\n", prueba_do(x));
+    printf("%s\n", prueba_do);
     return 0;
+}*/
+
+
+/* FOR */
+
+int main()
+{
+    int x;
+    for(x = 0; x < 10 ; x++)
+        printf("x vale: %d\n", x);
+    
 }
