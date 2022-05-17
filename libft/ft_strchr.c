@@ -6,7 +6,7 @@
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:46:43 by rherrero          #+#    #+#             */
-/*   Updated: 2022/05/10 11:21:33 by rherrero         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:38:45 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	int		len;
-	char	*scpy;
+	char	*p;
 
-	scpy = (char *)s;
-	i = 0;
-	len = ft_strlen(scpy);
-	if (c == '\0')
-		return (&scpy[len]);
-	while (scpy[i] != '\0')
+	p = (char *)s;
+	while (*p != (char)c)
 	{
-		if (scpy[i] == c)
-			return (&scpy[i]);
-		i++;
+		if (*p == '\0')
+			return (NULL);
+		p++;
 	}
-	return (0);
+	return (p);
 }
 
 /*Esta función busca la primera aparición de un caracter en un string, si el

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:04:04 by rherrero          #+#    #+#             */
-/*   Updated: 2022/05/11 19:16:08 by rherrero         ###   ########.fr       */
+/*   Created: 2022/04/28 09:06:34 by asolano-          #+#    #+#             */
+/*   Updated: 2022/05/13 13:26:30 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+#include"libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (lst)
 	{
+		lst = lst->next;
 		i++;
 	}
 	return (i);

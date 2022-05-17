@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rherrero <rherrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:04:04 by rherrero          #+#    #+#             */
-/*   Updated: 2022/05/11 19:16:08 by rherrero         ###   ########.fr       */
+/*   Created: 2022/04/28 09:17:13 by asolano-          #+#    #+#             */
+/*   Updated: 2022/05/17 11:28:38 by rherrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
-{
-	int	i;
+#include"libft.h"
 
-	i = 0;
-	while (s[i] != '\0')
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*next;
+
+	if (lst == 0)
+		return (0);
+	next = lst->next;
+	while (next)
 	{
-		i++;
+		lst = next;
+		next = lst->next;
 	}
-	return (i);
+	return (lst);
 }
