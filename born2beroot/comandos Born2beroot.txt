@@ -1,0 +1,75 @@
+-Para comprobar el sha: echo '9fe112877c2fb2080426b0a8f5d1e76397836960 *signature.txt' | shasum -c
+
+-Para comprobar el estado de APPArmor: sudo aa-status
+
+-Comprobar el estado de UFW: sudo ufw status
+
+-Comprobar el estado SSH: sudo service ssh status
+
+-Comprobar nombre del sistema operativo: hostnamectl | grep Operating
+
+-Comprobar que el usuario existe: getent passwd | grep "darlandi"
+
+-Comprobar que el usuario está en el grupo sudo y user42: getent group darlandi42, getent group sudo
+
+-Añadir un usuario: sudo adduser "usuario"
+
+-Para configurar las reglas de la contraseña: sudo vim /etc/login.defs, sudo vim /etc/pam.d/common-password
+
+-Añadir un grupo: sudo addgroup evaluating
+
+-Añadir un usuario al grupo: sudo adduser "usuario" evaluating
+
+-Comprobar que se ha añadido bien: sudo getent group evaluating
+
+-Comprobar el hostname: hostnamectl
+
+-Modificar el hostname: sudo vim /etc/hostname, systemctl reboot
+
+-Ver particiones hdd: lsblk
+
+-Comprobar que sudo está instalado: dpkg -l | grep sudo
+
+-Añadir usuario al grupo sudo: sudo adduser "usuario" sudo
+
+-Ver las reglas impuestas a sudo: sudo vim /etc/sudoers.d/sudoconfig
+
+-Ver las reglas de longitud mínima de contraseña, intentos...: sudo vim/etc/pam.d/common-password
+
+-Comprobar que /var/log/sudo existe: navegar por las carpetas var/log/sudo/00/00/ y ver los archivos
+
+-Comprobar un comando sudo: sudo apt update
+
+-Comprobar UFW está instalado: dpkg -l | grep ufw
+
+-Comprobar que UFW funciona y las reglas: sudo ufw status
+
+-Añadir una nueva regla al puerto 8080: sudo ufw allow 80
+
+-Eliminar una regla: sudo ufw deny 8080, sudo ufw delete 4
+
+-Comprobar que el servidor ssh está instalado: dpkg -l | grep ssh, sudo service ssh status
+
+-Comprobar que ssh tiene abierto el puerto 4242: sudo vim/etc/ssh/sshd_config
+
+-Intentar conectarse por ssh con el usuario root y ver que da error
+
+-Explicar el archivo monitoring.sh en: sudo vim usr/local/bin/monitoring.sh
+
+-Ver las reglas crontab: sudo crontab -u root -e
+
+- Ver tareas crontab: sudo crontab -u root -l
+
+-Parar el script: sudo /etc/init.d/cron stop
+
+-Volver a iniciar el script: sudo /etc/init.d/cron start
+
+-Ver que esta instalado lighttpd: dpkg -l | grep lighttpd, dpkg -l | grep marida-server
+
+-Ver que está instalado wordpress: cd /var/www/html
+
+-Ver que Wordpress está enlazado a maridadb: sudo vim /var/www/html/wp-config.php
+
+-Ver base de datos mariadb: sudo mariadb y show databases;
+
+-Entrar en ftp: ftp 127.0.0.1
